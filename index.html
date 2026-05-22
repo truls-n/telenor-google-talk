@@ -442,19 +442,39 @@
             const demoVideo = document.getElementById('demoVideo');
             const demoVideoWrapper = document.getElementById('demoVideoWrapper');
             if (demoVideo && demoVideoWrapper) {
+                // When video starts playing, fade in the wrapper (keep controls hidden!)
                 demoVideo.addEventListener('playing', () => {
                     demoVideoWrapper.classList.add('video-active');
-                    // Enable browser controls only after video starts playing to avoid pre-play flash
-                    setTimeout(() => {
-                        if (demoVideoWrapper.classList.contains('video-active')) {
-                            demoVideo.controls = true;
-                        }
-                    }, 400);
                 });
 
+                // When video ends, hide controls and fade out the wrapper
                 demoVideo.addEventListener('ended', () => {
                     demoVideo.controls = false;
                     demoVideoWrapper.classList.remove('video-active');
+                });
+
+                // Prevent clicking on the video wrapper from jumping to the next slide
+                demoVideoWrapper.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                // Hover controls: Show browser player controls only when hovering over the active video
+                demoVideoWrapper.addEventListener('mouseenter', () => {
+                    if (demoVideoWrapper.classList.contains('video-active') && !demoVideo.ended) {
+                        demoVideo.controls = true;
+                    }
+                });
+
+                demoVideoWrapper.addEventListener('mouseleave', () => {
+                    demoVideo.controls = false;
+                });
+
+                // Mobile compatibility: Toggle controls on click/tap, while still blocking slide navigation
+                demoVideo.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (demoVideoWrapper.classList.contains('video-active') && !demoVideo.ended) {
+                        demoVideo.controls = !demoVideo.controls;
+                    }
                 });
             }
 
