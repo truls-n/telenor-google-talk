@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escape Velocity — Telenor × Google Cloud</title>
+    <meta name="description"
+        content="Building our Future with an Agentic Way of Work. A presentation by Telenor, powered by Google Cloud Platform.">
+
+    <!-- Google Fonts — Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+
+        <!-- ===================== Slide 1 — Title ===================== -->
+        <section id="slide-1" class="slide slide--image active"
+            style="background-image: url(./images/new-01-title.png);">
+            <div class="overlay"></div>
+            <div class="content content--center">
+                <h1>Escape Velocity: Building our Future with an <span class="accent">Agentic Way of Work</span></h1>
+                <h2>Truls Erik Nielsen<br>Head of Admin Products, eCommerce &amp; Shared Services</h2>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 2 — Cold Open ===================== -->
+        <section id="slide-2" class="slide slide--image"
+            style="background-image: url(./images/bg-digital-analyst.png);">
+            <div class="overlay"></div>
+            <div class="content content--center">
+                <p class="hook-text">We recently got a new colleague. In <em>all</em> our teams... He's an agent. And he
+                    lets us chat with our data. More on him later.<span class="blinking-cursor">|</span></p>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 3 — Who We Are (Two-Column) ===================== -->
+        <section id="slide-3" class="slide slide--image"
+            style="background-image: url(./images/bg-corporate-stats.png);">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>A Scale-Up <span class="accent">Inside a Giant</span></h1>
+                <div class="slide3-columns">
+                    <div class="stat-grid">
+                        <div class="stat-box">
+                            <div class="stat-box__label">Market Leader</div>
+                            <div class="stat-box__title">Leading B2B Telco</div>
+                            <div class="stat-box__subtitle">~60% market share in Norway</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box__label">Our Org</div>
+                            <div class="stat-box__title">225 People</div>
+                            <div class="stat-box__subtitle">Powering B2B Mobile</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box__label">Economic Scale</div>
+                            <div class="stat-box__title">Top 45 OSE Company</div>
+                            <div class="stat-box__subtitle">Our business area alone, by revenue</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-box__label">Data Volume</div>
+                            <div class="stat-box__title">Massive Data Warehouse</div>
+                            <div class="stat-box__subtitle">One of Norway's largest, now on GCP</div>
+                        </div>
+                    </div>
+                    <div class="my-role-box">
+                        <h3>My Role</h3>
+                        <p>Leading 7/22 teams championing:</p>
+                        <div class="role-tags">
+                            <span class="role-tag">eCommerce</span>
+                            <span class="role-tag">Mobile Hardware</span>
+                            <span class="role-tag">Self Service</span>
+                            <span class="role-tag">Integration Products</span>
+                            <span class="role-tag">CRM</span>
+                            <span class="role-tag">Martech</span>
+                            <span class="role-tag">Data &amp; AI Foundation</span>
+                            <span class="role-tag">Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 4 — The Dilemma (Graph + Insight) ===================== -->
+        <section id="slide-4" class="slide slide--image" style="background-image: url(./images/bg-subtle-texture.png);">
+            <div class="overlay"></div>
+            <div class="content content--center">
+                <h1>Our Core Dilemma: <span class="accent">The Gravitational Pull of Legacy</span></h1>
+                <div class="graph-wrapper">
+                    <div class="graph-container">
+                        <div class="graph-area">
+                            <span class="graph-label graph-label--y">Effort &amp; Resources</span>
+                            <span class="graph-label graph-label--x">Time →</span>
+                            <div class="graph-line">
+                                <svg viewBox="0 0 800 260" preserveAspectRatio="none">
+                                    <polyline class="line-running"
+                                        points="0,40 100,38 200,42 300,36 400,40 500,35 600,38 700,36 800,40" />
+                                    <polyline class="line-building"
+                                        points="0,220 100,215 200,222 300,210 400,218 500,225 600,212 700,220 800,216" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="graph-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot legend-dot--blue"></span>
+                                Running the Business
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot legend-dot--red"></span>
+                                Building the Future
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graph-insight">
+                        <h3>The Challenge</h3>
+                        <p>Today, <strong>&gt;80%</strong> of our resources are tied to 'Run', limiting our capacity for
+                            'Change' and 'Disrupt'.</p>
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 5 — The "Why" ===================== -->
+        <section id="slide-5" class="slide slide--image"
+            style="background-image: url(./images/bg-unstructured-data.png);">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>The Real Problem: <span class="accent">Our Knowledge is Trapped</span></h1>
+                <h2>To build digital colleagues, we first need to structure our vast, unreadable data from PowerPoints,
+                    emails, and conversations.</h2>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 6 — The "How" ===================== -->
+        <section id="slide-6" class="slide slide--image"
+            style="background-image: url(./images/bg-developer-workflow.png);">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Our Method: <span class="accent">Adopt the Developer's Toolkit</span></h1>
+                <h2>We mandate that everyone works with plain text (Markdown), version control (Git), and peer review
+                    (Pull Requests). This makes our knowledge structured by default.</h2>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 7 — Everything as Code (Table) ===================== -->
+        <section id="slide-7" class="slide slide--image"
+            style="background-image: url(./images/bg-engine-room.png);">
+            <div class="overlay"></div>
+            <div class="content content--center">
+                <h1>The Engine Room: <span class="accent">Treating Everything as Code</span></h1>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Dimension</th>
+                            <th>Old Way</th>
+                            <th>New Way</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Documents</td>
+                            <td class="old-way">PowerPoint &amp; Word</td>
+                            <td class="new-way">Markdown in Git</td>
+                        </tr>
+                        <tr>
+                            <td>Collaboration</td>
+                            <td class="old-way">Email threads</td>
+                            <td class="new-way">Pull Requests &amp; Reviews</td>
+                        </tr>
+                        <tr>
+                            <td>Data Pipelines</td>
+                            <td class="old-way">Manual ETL scripts</td>
+                            <td class="new-way">dbt models in version control</td>
+                        </tr>
+                        <tr>
+                            <td>Dashboards</td>
+                            <td class="old-way">Static exports</td>
+                            <td class="new-way">LookML as Code</td>
+                        </tr>
+                        <tr>
+                            <td>Infrastructure</td>
+                            <td class="old-way">Manual Requests &amp; Waiting</td>
+                            <td class="new-way">Automated Self Service</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 7B — Data Architecture ===================== -->
+        <section id="slide-data-architecture" class="slide slide--image" style="background-image: url(./images/bg-architecture-blocks.png);">
+            <div class="overlay"></div>
+            <div class="content content--center">
+                <h1>Looker GCP Architecture: <span class="accent">Our Semantic Engine</span></h1>
+                <h2>From source to a single version of truth and intelligent conversations with your business data.</h2>
+                
+                <div class="arch-pipeline">
+                    <!-- Step 1: Sources -->
+                    <div class="arch-card arch-card--sources">
+                        <div class="arch-card__badge">Step 1</div>
+                        <h4>Data Sources</h4>
+                        <ul class="arch-list">
+                            <li><span>BigQuery</span></li>
+                            <li><span>Salesforce</span></li>
+                            <li><span>Other Sources</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="arch-connector">
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <!-- Step 2: Medallion Warehouse -->
+                    <div class="arch-card arch-card--medallion">
+                        <div class="arch-card__badge">Step 2</div>
+                        <h4>Storage (dbt)</h4>
+                        <div class="medallion-stack">
+                            <div class="medallion-layer gold" title="Structured data products prepared for Looker">Gold: Data Products</div>
+                            <div class="medallion-layer silver" title="Cleaned and harmonized intermediate layer">Silver: Intermediate Layer</div>
+                            <div class="medallion-layer bronze" title="Raw data directly from source systems">Bronze: Raw Data</div>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <!-- Step 3: Semantic Layer -->
+                    <div class="arch-card arch-card--semantic">
+                        <div class="arch-card__badge">Step 3</div>
+                        <h4>Semantic Layer</h4>
+                        <p class="arch-card__sub">LookML defined as code</p>
+                        <div class="metric-tags">
+                            <span class="metric-tag" title="Key Performance Indicators shared across all">KPI</span>
+                            <span class="metric-tag" title="Commonly defined customer segments">Segment</span>
+                            <span class="metric-tag" title="Mobile Traffic">MT</span>
+                            <span class="metric-tag" title="Telenor Service Platform">TSP</span>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">
+                        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+
+                    <!-- Step 4: Consumption -->
+                    <div class="arch-card arch-card--consumption">
+                        <div class="arch-card__badge">Step 4</div>
+                        <h4>Consumption</h4>
+                        <div class="consumer-blocks">
+                            <div class="consumer-block ai" title="Our new agentic colleague">
+                                <span class="icon">🤖</span>
+                                <strong>Digital Analyst</strong>
+                            </div>
+                            <div class="consumer-block looker" title="Traditional dashboards and reports">
+                                <span class="icon">📊</span>
+                                <strong>Looker Dashboards</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 8 — AI Analyst Architecture ===================== -->
+        <section id="slide-8" class="slide slide--image"
+            style="background-image: url(./images/new-06-architecture.png);">
+            <div class="overlay"></div>
+            <div class="content content--center">
+                <h1>Meet the <span class="accent">"AI Analyst"</span>: Our First Digital Colleague</h1>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 9 — Demo ===================== -->
+        <section id="slide-9" class="slide">
+            <div class="content content--center">
+                <h1>This is not a dashboard. <span class="accent">This is a conversation.</span></h1>
+                <div class="demo-placeholder">
+                    <p>Live Demo / Video</p>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 10 — Culture / Aha Moment (Image) ===================== -->
+        <section id="slide-10" class="slide slide--image" style="background-image: url(./images/bg-new-culture.png);">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>The Digital Analyst <span class="accent">Created an Appetite for More</span></h1>
+                <h2>The result? A cultural shift. The 'AI Analyst' proved the value of this new way of work, replacing
+                    skepticism with genuine excitement for 'what's next'.</h2>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 11 — Roadmap ===================== -->
+        <section id="slide-11" class="slide">
+            <div class="content content--center">
+                <h1>This is <span class="accent">Just the Beginning</span></h1>
+                <h2 class="tagline">"It doesn't help to be twice as good in a world that becomes 10x faster."</h2>
+                <div class="roadmap">
+                    <div class="roadmap-phase roadmap-phase--active">
+                        <span class="phase-badge">Phase 1</span>
+                        <div class="phase-title">AI Analyst</div>
+                        <div class="phase-desc">Conversational analytics across our full data warehouse. Ask questions,
+                            get answers.</div>
+                        <div class="phase-status phase-status--live">&#9679; Live</div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <span class="phase-badge">Phase 2</span>
+                        <div class="phase-title">Sales Ops Assistant</div>
+                        <div class="phase-desc">Proactive insights and deal recommendations delivered directly to sales
+                            teams.</div>
+                        <div class="phase-status phase-status--next">&#9675; Next</div>
+                    </div>
+                    <div class="roadmap-phase">
+                        <span class="phase-badge">Phase 3</span>
+                        <h3 class="phase-title">The Agentic Operating Model</h3>
+                        <p class="phase-desc">A future where hybrid teams of humans &amp; AI agents are the new standard, freeing our talent to focus on strategy and creativity.</p>
+                        <div class="phase-status phase-status--future"><span class="status">Our North Star ⭐</span></div>
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 12 — Thank You ===================== -->
+        <section id="slide-12" class="slide">
+            <div class="content content--center">
+                <h1>Thank You</h1>
+                <div class="contact-info">
+                    <p>Truls Erik Nielsen</p>
+                    <p>Head of Admin Products, eCommerce &amp; Shared Services</p>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide counter -->
+    <div class="slide-counter" id="slideCounter"></div>
+
+    <!-- Navigation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const progressBar = document.getElementById('progressBar');
+            const slideCounter = document.getElementById('slideCounter');
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+
+            function updateUI() {
+                const pct = ((currentSlide + 1) / totalSlides) * 100;
+                progressBar.style.width = pct + '%';
+                slideCounter.textContent = (currentSlide + 1) + ' / ' + totalSlides;
+            }
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                updateUI();
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    e.preventDefault();
+                    if (currentSlide < totalSlides - 1) {
+                        currentSlide++;
+                        showSlide(currentSlide);
+                    }
+                } else if (e.key === 'ArrowLeft') {
+                    if (currentSlide > 0) {
+                        currentSlide--;
+                        showSlide(currentSlide);
+                    }
+                } else if (e.key === 'Home') {
+                    currentSlide = 0;
+                    showSlide(currentSlide);
+                } else if (e.key === 'End') {
+                    currentSlide = totalSlides - 1;
+                    showSlide(currentSlide);
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                const x = e.clientX / window.innerWidth;
+                if (x < 0.33) {
+                    if (currentSlide > 0) {
+                        currentSlide--;
+                        showSlide(currentSlide);
+                    }
+                } else {
+                    if (currentSlide < totalSlides - 1) {
+                        currentSlide++;
+                        showSlide(currentSlide);
+                    }
+                }
+            });
+
+            let touchStartX = 0;
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].clientX;
+            });
+            document.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0 && currentSlide < totalSlides - 1) {
+                        currentSlide++;
+                    } else if (diff < 0 && currentSlide > 0) {
+                        currentSlide--;
+                    }
+                    showSlide(currentSlide);
+                }
+            });
+
+            updateUI();
+        });
+    </script>
+
+</body>
+
+</html>
