@@ -317,8 +317,8 @@
         <section id="slide-9" class="slide">
             <div class="content content--center">
                 <h1>This is not a dashboard. <span class="accent">This is a conversation.</span></h1>
-                <div class="demo-placeholder">
-                    <p>Live Demo / Video</p>
+                <div class="demo-video-wrapper">
+                    <video class="demo-video" autoplay muted playsinline controls src="./media/looker-agent.mp4"></video>
                 </div>
             </div>
             <footer class="slide-footer">
@@ -415,7 +415,18 @@
 
             function showSlide(index) {
                 slides.forEach((slide, i) => {
-                    slide.classList.toggle('active', i === index);
+                    const isActive = i === index;
+                    slide.classList.toggle('active', isActive);
+                    
+                    const video = slide.querySelector('video');
+                    if (video) {
+                        if (isActive) {
+                            video.currentTime = 0;
+                            video.play().catch(err => console.log('Autoplay play error:', err));
+                        } else {
+                            video.pause();
+                        }
+                    }
                 });
                 updateUI();
             }

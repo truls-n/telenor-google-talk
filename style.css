@@ -880,32 +880,27 @@ h2 {
 .slide.active .arch-connector:nth-of-type(2) svg { animation-delay: 0.97s; }
 .slide.active .arch-connector:nth-of-type(3) svg { animation-delay: 1.12s; }
 
-/* ---------- Demo Placeholder (Slide 9) ---------- */
-.demo-placeholder {
-  width: 75%;
-  max-width: 900px;
-  height: 45vh;
-  border: 2px dashed var(--telenor-blue);
-  border-radius: var(--radius-lg);
+/* ---------- Demo Video (Slide 9) ---------- */
+.demo-video-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin-top: 1.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--telenor-blue-light);
-  margin-top: 2rem;
-  opacity: 0.6;
-  transition: opacity 0.3s ease;
+  background: #000000;
 }
 
-.demo-placeholder:hover {
-  opacity: 0.8;
-}
-
-.demo-placeholder p {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--telenor-blue);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.demo-video {
+  width: 100%;
+  height: auto;
+  max-height: 55vh; /* Entire video height fits perfectly on desktop screens */
+  object-fit: contain;
+  display: block;
 }
 
 /* ---------- Roadmap (Slide 11) ---------- */
@@ -1137,8 +1132,11 @@ h2 {
   .roadmap {
     flex-direction: column;
   }
-  .demo-placeholder {
-    width: 90%;
+  .demo-video-wrapper {
+    width: 95%;
+  }
+  .demo-video {
+    max-height: 40vh;
   }
   .comparison-table {
     font-size: 0.9rem;
