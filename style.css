@@ -882,8 +882,9 @@ h2 {
 
 /* ---------- Demo Video (Slide 9) ---------- */
 .demo-video-wrapper {
-  width: 100%;
-  max-width: 960px;
+  height: 55vh;
+  width: auto;
+  aspect-ratio: 564 / 720; /* Mathematically crops the 27.97% black vertical bars on both sides */
   margin-top: 1.5rem;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -893,13 +894,20 @@ h2 {
   justify-content: center;
   align-items: center;
   background: #000000;
+  
+  /* Hidden by default, fades in smoothly when video starts playing */
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.demo-video-wrapper.video-active {
+  opacity: 1;
 }
 
 .demo-video {
   width: 100%;
-  height: auto;
-  max-height: 55vh; /* Entire video height fits perfectly on desktop screens */
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover; /* Symmetrically crops left/right overflow of black pillars */
   display: block;
 }
 
@@ -1133,10 +1141,13 @@ h2 {
     flex-direction: column;
   }
   .demo-video-wrapper {
-    width: 95%;
+    height: 40vh;
+    width: auto;
+    aspect-ratio: 564 / 720;
   }
   .demo-video {
-    max-height: 40vh;
+    width: 100%;
+    height: 100%;
   }
   .comparison-table {
     font-size: 0.9rem;

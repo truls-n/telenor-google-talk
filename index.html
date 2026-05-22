@@ -317,8 +317,8 @@
         <section id="slide-9" class="slide">
             <div class="content content--center">
                 <h1>This is not a dashboard. <span class="accent">This is a conversation.</span></h1>
-                <div class="demo-video-wrapper">
-                    <video class="demo-video" autoplay muted playsinline controls src="./media/looker-agent.mp4"></video>
+                <div class="demo-video-wrapper" id="demoVideoWrapper">
+                    <video class="demo-video" id="demoVideo" autoplay muted playsinline src="./media/looker-agent.mp4"></video>
                 </div>
             </div>
             <footer class="slide-footer">
@@ -422,13 +422,40 @@
                     if (video) {
                         if (isActive) {
                             video.currentTime = 0;
+                            video.controls = false; // Hide player controls initially
+                            const wrapper = slide.querySelector('.demo-video-wrapper');
+                            if (wrapper) wrapper.classList.remove('video-active');
+                            
                             video.play().catch(err => console.log('Autoplay play error:', err));
                         } else {
                             video.pause();
+                            video.controls = false; // Hide player controls when inactive
+                            const wrapper = slide.querySelector('.demo-video-wrapper');
+                            if (wrapper) wrapper.classList.remove('video-active');
                         }
                     }
                 });
                 updateUI();
+            }
+
+            // Setup state-based player controls and wrapper visibility transitions
+            const demoVideo = document.getElementById('demoVideo');
+            const demoVideoWrapper = document.getElementById('demoVideoWrapper');
+            if (demoVideo && demoVideoWrapper) {
+                demoVideo.addEventListener('playing', () => {
+                    demoVideoWrapper.classList.add('video-active');
+                    // Enable browser controls only after video starts playing to avoid pre-play flash
+                    setTimeout(() => {
+                        if (demoVideoWrapper.classList.contains('video-active')) {
+                            demoVideo.controls = true;
+                        }
+                    }, 400);
+                });
+
+                demoVideo.addEventListener('ended', () => {
+                    demoVideo.controls = false;
+                    demoVideoWrapper.classList.remove('video-active');
+                });
             }
 
             document.addEventListener('keydown', (e) => {
