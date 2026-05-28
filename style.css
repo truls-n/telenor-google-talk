@@ -1,6 +1,6 @@
 /* ============================================================
-   style.css — Nordic Light Theme
-   Telenor × Google Cloud Presentation
+   style.css — Nordic Light Theme (Widescreen Presentation)
+   Telenor × Google Cloud — Final Polished Build
    ============================================================ */
 
 /* ---------- Design Tokens ---------- */
@@ -16,12 +16,12 @@
   --accent-gradient: linear-gradient(135deg, #0066ff 0%, #00b4d8 100%);
   --border-color: #dee2e6;
   --border-light: #e9ecef;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.08);
   --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
 }
 
 /* ---------- Reset & Global ---------- */
@@ -65,13 +65,13 @@ main {
   display: flex;
 }
 
-/* ---------- Slide Variants ---------- */
-
-/* Image slide with light overlay */
+/* ---------- Image overlay ---------- */
 .slide--image .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(248, 249, 250, 0.3);
+  background: rgba(248, 249, 250, 0.45);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   z-index: 1;
 }
 
@@ -80,7 +80,7 @@ main {
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 4rem 3rem;
   display: flex;
@@ -97,71 +97,46 @@ main {
 
 /* ---------- Typography ---------- */
 h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.85rem;
+  font-weight: 800;
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   color: var(--text-primary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 h1 .accent {
   color: var(--telenor-blue);
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.5;
   color: var(--text-secondary);
-  max-width: 780px;
+  max-width: 850px;
+  margin-bottom: 1.5rem;
 }
 
-/* ---------- Hook Text (Slide 2 — Cold Open) ---------- */
-.hook-text {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.6;
-  color: var(--text-primary);
-  max-width: 800px;
-  text-align: center;
-}
-
-.hook-text em {
-  font-style: italic;
+h2 .accent {
   color: var(--telenor-blue);
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* ---------- Blinking Cursor ---------- */
-.blinking-cursor {
-  font-weight: 300;
-  color: var(--telenor-blue);
-  animation: blink 1s step-end infinite;
-  margin-left: 2px;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* ---------- Slide 2 — Cold Open Overlay Override ---------- */
-#slide-2 .overlay {
-  background: rgba(248, 249, 250, 0.85);
-}
-
-/* ---------- Footer (Logos) — Global ---------- */
+/* ---------- Slide Footer (Logos) ---------- */
 .slide-footer {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2rem;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3.5rem;
 }
 
 .slide-footer .logo {
@@ -169,177 +144,56 @@ h2 {
   width: auto !important;
   vertical-align: middle;
   object-fit: contain;
-  opacity: 0.75;
-  transition: opacity 0.3s ease;
+  opacity: 0.65;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .slide-footer .logo:hover {
   opacity: 1.0;
+  transform: scale(1.03);
 }
 
 /* ============================================================
-   Coded Visualizations
+   Slide 2: The Burning Platform Graph & Styles
    ============================================================ */
-
-/* ---------- Stat Grid (Slide 3) ---------- */
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+.burning-container {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
   width: 100%;
   margin-top: 2rem;
 }
 
-.stat-box {
-  background: var(--bg-white);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.75rem;
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+.burning-text {
+  flex: 0 0 380px;
+  text-align: left;
 }
 
-.stat-box:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.stat-box__label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--telenor-blue);
-  margin-bottom: 0.5rem;
-}
-
-.stat-box__title {
-  font-size: 1.5rem;
-  font-weight: 700;
+.burning-lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: var(--text-primary);
-  margin-bottom: 0.35rem;
-  line-height: 1.2;
+  margin-bottom: 1.25rem;
 }
 
-.stat-box__subtitle {
+.burning-lead strong {
+  color: #e63946;
+  font-weight: 700;
+}
+
+.burning-sub {
   font-size: 0.95rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-/* ---------- Two-Column Layout (Slide 3) ---------- */
-.slide3-columns {
-  display: flex;
-  gap: 2rem;
-  width: 100%;
-  margin-top: 2rem;
-  align-items: stretch;
-}
-
-.slide3-columns .stat-grid {
-  flex: 1;
-  margin-top: 0;
-}
-
-/* ---------- My Role Box (Slide 3 — right column) ---------- */
-.my-role-box {
-  flex: 0 0 320px;
-  background: var(--telenor-blue-light);
-  border: 2px solid var(--telenor-blue);
-  border-radius: var(--radius-md);
-  padding: 2rem 1.5rem;
-  box-shadow: var(--shadow-md);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.my-role-box h3 {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--telenor-blue);
-  margin-bottom: 0.75rem;
-}
-
-.my-role-box p {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  line-height: 1.5;
-}
-
-.role-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-}
-
-.role-tag {
-  background: var(--bg-white);
-  border: 1.5px solid var(--telenor-blue);
-  color: var(--telenor-blue-dark);
-  padding: 0.4rem 0.8rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-  cursor: default;
-}
-
-.role-tag:hover {
-  transform: translateY(-2px) scale(1.02);
-  background: var(--telenor-blue);
-  color: var(--bg-white);
-  box-shadow: var(--shadow-md);
-  border-color: var(--telenor-blue);
-}
-
-/* ---------- Dilemma Slide Overlay Override (Slide 4) ---------- */
-#slide-4 .overlay {
-  background: rgba(248, 249, 250, 0.85);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-}
-
-/* ---------- Engine Room Slide Overlay Override (Slide 7) ---------- */
-#slide-7 .overlay {
-  background: rgba(248, 249, 250, 0.7);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-
-/* ---------- Culture / Aha Moment Slide Overlay Override (Slide 10) ---------- */
-#slide-10 .overlay {
-  background: rgba(248, 249, 250, 0.75);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-/* ---------- Line Graph + Insight (Slide 4) ---------- */
-.graph-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.graph-wrapper .graph-container {
-  flex: 1;
-  margin-top: 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 .graph-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 2rem auto 0;
-  position: relative;
+  flex: 1;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .graph-area {
@@ -350,73 +204,167 @@ h2 {
   border-bottom: 2px solid var(--border-color);
 }
 
-.graph-line {
+.graph-svg-wrapper {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
+  overflow: visible;
 }
 
-.graph-line svg {
+.graph-svg-wrapper svg {
   width: 100%;
   height: 100%;
   overflow: visible;
 }
 
-.graph-line svg polyline {
-  fill: none;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
+/* Graph paths setup */
+.line-legacy, .line-legacy-projected, .line-future, .line-future-projected {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
 }
 
-.slide.active .line-running {
-  animation: drawLine 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
-}
-
-.slide.active .line-building {
-  animation: drawLine 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.7s forwards;
-}
-
-@keyframes drawLine {
+/* Drawing animations on slide active */
+@keyframes drawPath {
   to { stroke-dashoffset: 0; }
 }
 
-.line-running { stroke: var(--telenor-blue); }
-.line-building { stroke: #e63946; }
+.slide.active .line-legacy {
+  animation: drawPath 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+}
 
+.slide.active .line-legacy-projected {
+  animation: drawPath 1.4s cubic-bezier(0.22, 1, 0.36, 1) 1.2s forwards;
+}
+
+.slide.active .line-future {
+  animation: drawPath 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+}
+
+.slide.active .line-future-projected {
+  animation: drawPath 1.4s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
+}
+
+/* Point glow effect */
+.graph-point-glow {
+  fill: #ffaa00;
+  opacity: 0;
+  transform-origin: center;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes pulseGlow {
+  0% { r: 6; opacity: 0.6; }
+  100% { r: 16; opacity: 0; }
+}
+
+.slide.active .graph-point-glow {
+  opacity: 0.4;
+  animation: pulseGlow 2s infinite ease-out 2s;
+}
+
+.graph-point {
+  fill: #ffaa00;
+  stroke: #ffffff;
+  stroke-width: 2;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: opacity 0.4s ease 2s, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 2s;
+}
+
+.slide.active .graph-point {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Floating callout */
+.graph-callout {
+  position: absolute;
+  left: 77.5%;
+  top: 36.5%;
+  transform: translate(-50%, -100%);
+  background: var(--text-primary);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 5;
+  text-align: left;
+}
+
+.graph-callout::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: var(--text-primary) transparent;
+}
+
+.callout-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffaa00;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+.callout-desc {
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+@keyframes fadeInScaleUp {
+  from { opacity: 0; transform: translate(-50%, -90%) scale(0.95); }
+  to { opacity: 1; transform: translate(-50%, -100%) scale(1); }
+}
+
+.slide.active .graph-callout {
+  animation: fadeInScaleUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards;
+}
+
+/* Legend */
 .graph-legend {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
-  margin-top: 1.25rem;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-secondary);
 }
 
-.legend-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+.legend-line {
+  width: 24px;
+  height: 4px;
+  border-radius: 10px;
 }
 
-.legend-dot--blue { background: var(--telenor-blue); }
-.legend-dot--red { background: #e63946; }
+.legend-line--red { background: #e63946; }
+.legend-line--blue { background: #0066ff; }
+.legend-line--dotted {
+  border-bottom: 3.5px dotted #0066ff;
+  height: 0;
+}
 
 .graph-label {
   position: absolute;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.7rem;
+  font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -434,174 +382,166 @@ h2 {
   right: 0;
 }
 
-/* -- Graph Insight Box -- */
-.graph-insight {
-  flex: 0 0 260px;
-  background: var(--bg-white);
+/* ============================================================
+   Slide 3: Our Strategic Answer — Adaptive OS
+   ============================================================ */
+.adaptive-container {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.adaptive-container h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  line-shadow: 0 0 10px #fff;
+  text-shadow: 0 0 12px rgba(248, 249, 250, 1), 0 0 24px rgba(248, 249, 250, 0.9);
+}
+
+.adaptive-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+.adaptive-card {
+  background: rgba(255, 255, 255, 0.88);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
+  padding: 2.5rem 2rem;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.2, 1, 0.2, 1), box-shadow 0.3s ease;
   text-align: left;
-}
-
-.graph-insight h3 {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--telenor-blue);
-  margin-bottom: 0.75rem;
-}
-
-.graph-insight p {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.graph-insight strong {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #e63946;
-  letter-spacing: -0.02em;
-}
-
-/* ---------- Slide 5 — Text readability halo ---------- */
-#slide-5 h1,
-#slide-5 h2 {
-  text-shadow: 0 0 15px rgba(248, 249, 250, 1), 0 0 30px rgba(248, 249, 250, 0.95), 0 0 60px rgba(248, 249, 250, 0.7);
-}
-
-/* ---------- Slide 6 — Text card over full-visibility photo ---------- */
-#slide-6 .overlay {
-  background: none;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-
-#slide-6 .content {
-  flex: none;
-  margin: auto;
-  background: rgba(248, 249, 250, 0.82);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 3rem;
-  max-width: 720px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* ---------- Vision List (Slides 5 & 6) ---------- */
-.vision-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
+.adaptive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--telenor-blue);
 }
 
-.vision-list li {
+.card-num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--telenor-blue);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
   position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: var(--text-secondary);
-  line-height: 1.5;
+  display: inline-block;
 }
 
-.vision-list li::before {
+.card-num::after {
   content: '';
   position: absolute;
+  bottom: -4px;
   left: 0;
-  top: 0.55em;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 16px;
+  height: 2px;
   background: var(--telenor-blue);
 }
 
-/* ---------- Comparison Table (Slide 7) ---------- */
-.comparison-table {
-  width: 100%;
-  max-width: 900px;
-  margin: 2rem auto 0;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-
-.comparison-table thead th {
-  background: var(--telenor-blue);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 1rem 1.5rem;
-  text-align: left;
-}
-
-.comparison-table thead th:first-child {
-  background: var(--text-primary);
-}
-
-.comparison-table tbody td {
-  background: var(--bg-white);
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
+.adaptive-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
   color: var(--text-primary);
-  border-bottom: 1px solid var(--border-light);
-  vertical-align: top;
 }
 
-.comparison-table tbody tr:last-child td {
-  border-bottom: none;
-}
-
-.comparison-table tbody td:first-child {
-  font-weight: 600;
+.adaptive-card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
   color: var(--text-secondary);
-  background: var(--bg-light);
-  width: 22%;
 }
 
-.comparison-table .old-way {
-  color: var(--text-muted);
-}
-
-.comparison-table .new-way {
-  color: var(--telenor-blue-dark);
-  font-weight: 500;
-}
-
-/* ---------- Architecture Slide (Slide 8) — Text Fix ---------- */
-#slide-8 h1,
-#slide-8 h2 {
-  color: var(--text-primary);
-}
-
-.architecture-img {
+/* ============================================================
+   Slide 4: Common Language Elements
+   ============================================================ */
+.common-language-container {
   width: 100%;
-  max-width: 850px;
-  margin: 2rem auto 0;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  margin-top: 1rem;
 }
 
-/* ---------- Looker GCP Data Architecture Slide ---------- */
-#slide-data-architecture h1,
-#slide-data-architecture h2 {
+.common-language-container h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 12px rgba(248, 249, 250, 1), 0 0 24px rgba(248, 249, 250, 0.9);
+}
+
+.language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.language-box {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: var(--radius-md);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  border-top: 4px solid var(--border-color);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.language-box--problem {
+  border-top-color: #e63946;
+}
+
+.language-box--solution {
+  border-top-color: var(--telenor-blue);
+}
+
+.box-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.language-box--problem .box-badge {
+  background: #ffebe8;
+  color: #d9383a;
+}
+
+.language-box--solution .box-badge {
+  background: var(--telenor-blue-light);
+  color: var(--telenor-blue-dark);
+}
+
+.language-box h3 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
+.language-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   Slide 5: Architecture Data Pipeline
+   ============================================================ */
 .arch-pipeline {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1050px;
+  max-width: 1100px;
   margin-top: 2.5rem;
   gap: 0.5rem;
 }
@@ -618,11 +558,11 @@ h2 {
   flex-direction: column;
   height: 350px;
   transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
-  opacity: 0; /* Animated entry */
+  opacity: 0;
 }
 
 .arch-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
   border-color: var(--telenor-blue);
 }
@@ -798,14 +738,14 @@ h2 {
   box-shadow: 0 0 12px rgba(0, 102, 255, 0.05);
 }
 
-@keyframes pulseGlow {
+@keyframes pulseCardGlow {
   0% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.2); }
   70% { box-shadow: 0 0 0 6px rgba(0, 102, 255, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); }
 }
 
 .consumer-block.ai {
-  animation: pulseGlow 2s infinite;
+  animation: pulseCardGlow 2.5s infinite;
 }
 
 .consumer-block.ai:hover {
@@ -836,25 +776,12 @@ h2 {
 }
 
 @keyframes flowPulse {
-  0% {
-    transform: translateX(0);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translateX(5px);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 0.4;
-  }
+  0% { transform: translateX(0); opacity: 0.4; }
+  50% { transform: translateX(5px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.4; }
 }
 
-/* Staggered entry when active */
-.slide.active .content > .arch-pipeline {
-  animation: none;
-}
-
+/* Staggered entries */
 .slide.active .arch-card {
   animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
@@ -872,19 +799,20 @@ h2 {
 .slide.active .arch-connector:nth-of-type(2) { animation-delay: 0.37s; }
 .slide.active .arch-connector:nth-of-type(3) { animation-delay: 0.52s; }
 
-/* Apply flowPulse animation once cards fade in */
 .slide.active .arch-connector svg {
   animation: flowPulse 2s infinite ease-in-out;
 }
-.slide.active .arch-connector:nth-of-type(1) svg { animation-delay: 0.82s; }
-.slide.active .arch-connector:nth-of-type(2) svg { animation-delay: 0.97s; }
-.slide.active .arch-connector:nth-of-type(3) svg { animation-delay: 1.12s; }
+.slide.active .arch-connector:nth-of-type(1) svg { animation-delay: 0.8s; }
+.slide.active .arch-connector:nth-of-type(2) svg { animation-delay: 0.95s; }
+.slide.active .arch-connector:nth-of-type(3) svg { animation-delay: 1.1s; }
 
-/* ---------- Demo Video (Slide 9) ---------- */
+/* ============================================================
+   Slide 6: AI Analyst (Centerpiece Video Demonstration)
+   ============================================================ */
 .demo-video-wrapper {
-  height: 55vh;
+  height: 60vh;
   width: auto;
-  aspect-ratio: 564 / 720; /* Mathematically crops the 27.97% black vertical bars on both sides */
+  aspect-ratio: 564 / 720; /* Symmetrically crops out black side columns */
   margin-top: 1.5rem;
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -895,7 +823,6 @@ h2 {
   align-items: center;
   background: #000000;
   
-  /* Hidden by default, fades in smoothly when video starts playing */
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -907,13 +834,233 @@ h2 {
 .demo-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Symmetrically crops left/right overflow of black pillars */
+  object-fit: cover;
   display: block;
 }
 
-/* ---------- Roadmap (Slide 11) ---------- */
-.tagline {
+/* ============================================================
+   Slide 7: Unexpected Discovery (The Pull Effect)
+   ============================================================ */
+.discovery-container {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.discovery-container h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px rgba(248, 249, 250, 1), 0 0 24px rgba(248, 249, 250, 0.9);
+}
+
+.discovery-box {
+  background: rgba(255, 255, 255, 0.92);
+  border-left: 5px solid var(--telenor-blue);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  max-width: 850px;
+  box-shadow: var(--shadow-md);
+  text-align: left;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.discovery-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--telenor-blue-light);
+  color: var(--telenor-blue-dark);
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.discovery-lead {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.discovery-lead strong {
+  color: var(--telenor-blue-dark);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Slide 8: The True Potential (Scenario Intro)
+   ============================================================ */
+.potential-container {
+  max-width: 880px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+.potential-lead {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--telenor-blue);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.potential-sub {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.potential-quote {
   font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--text-primary);
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ============================================================
+   Slide 9: Strategic Co-pilot (The Scenario payoff)
+   ============================================================ */
+#slide-9 h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--text-primary);
+  max-width: 900px;
+  margin-bottom: 2.5rem;
+}
+
+.scenario-container {
+  width: 100%;
+  max-width: 950px;
+}
+
+.agent-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+  text-align: left;
+}
+
+.agent-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1.25rem;
+  position: relative;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #2d9d4e;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 38px;
+  box-shadow: 0 0 0 rgba(45, 157, 78, 0.4);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 0 0 rgba(45, 157, 78, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(45, 157, 78, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(45, 157, 78, 0); }
+}
+
+.agent-card__avatar {
+  font-size: 2.25rem;
+  background: var(--telenor-blue-light);
+  border: 1.5px solid rgba(0, 102, 255, 0.15);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.agent-card__title h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.agent-card__subtitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.agent-quote__summary {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+}
+
+.agent-quote__summary strong {
+  color: var(--telenor-blue-dark);
+}
+
+.agent-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.agent-detail-item {
+  display: flex;
+  gap: 1rem;
+}
+
+.item-num {
+  flex-shrink: 0;
+  background: var(--telenor-blue-light);
+  color: var(--telenor-blue-dark);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.item-content p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   Slide 10: Scaling the OS (Roadmap)
+   ============================================================ */
+.tagline {
+  font-size: 1.25rem;
   font-style: italic;
   font-weight: 400;
   color: var(--text-secondary);
@@ -925,7 +1072,7 @@ h2 {
 }
 
 .status {
-  color: #d97706; /* premium amber gold */
+  color: #d97706;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -936,7 +1083,7 @@ h2 {
   display: flex;
   gap: 1.5rem;
   width: 100%;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .roadmap-phase {
@@ -944,15 +1091,16 @@ h2 {
   background: var(--bg-white);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-md);
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.75rem;
   position: relative;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.2, 1, 0.2, 1), border-color 0.3s ease;
+  text-align: left;
 }
 
 .roadmap-phase:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .roadmap-phase--active {
@@ -975,80 +1123,95 @@ h2 {
   border-radius: 100px;
   background: var(--border-light);
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .phase-title {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .phase-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
 }
 
 .phase-status {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  font-weight: 600;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
-.phase-status--live {
-  color: #2d9d4e;
+.phase-status--live { color: #2d9d4e; }
+.phase-status--next { color: var(--telenor-blue); }
+.phase-status--future { color: var(--text-muted); }
+
+/* ============================================================
+   Slide 11: Thank You
+   ============================================================ */
+.thank-you-box {
+  margin-bottom: 3rem;
 }
 
-.phase-status--next {
-  color: var(--telenor-blue);
-}
-
-.phase-status--future {
-  color: var(--text-muted);
-}
-
-/* ---------- Q&A / Thank You (Slide 12) ---------- */
-.contact-info {
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
+.thank-you-box h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.callout-speed {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.contact-info {
+  margin-top: 2rem;
   text-align: center;
 }
 
-.contact-info a {
-  color: var(--telenor-blue);
-  text-decoration: none;
-  font-weight: 500;
+.contact-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
+.contact-title {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
-/* ---------- Slide Progress Indicator ---------- */
+/* ============================================================
+   Global UI Accessories (Progress Bar & Counter)
+   ============================================================ */
 .progress-bar {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 3px;
+  height: 4px;
   background: var(--accent-gradient);
   z-index: 100;
   transition: width 0.45s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ---------- Slide Counter ---------- */
 .slide-counter {
   position: fixed;
-  bottom: 0.75rem;
-  right: 1.5rem;
+  bottom: 1rem;
+  right: 2rem;
   z-index: 100;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-muted);
   letter-spacing: 0.08em;
 }
@@ -1057,14 +1220,8 @@ h2 {
    Entrance Animations
    ============================================================ */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .slide.active .content > * {
@@ -1076,84 +1233,81 @@ h2 {
 .slide.active .content > *:nth-child(3) { animation-delay: 0.34s; }
 .slide.active .content > *:nth-child(4) { animation-delay: 0.46s; }
 
-/* Stat boxes stagger */
-.slide.active .stat-box:nth-child(1) { animation: fadeInUp 0.5s ease both 0.2s; }
-.slide.active .stat-box:nth-child(2) { animation: fadeInUp 0.5s ease both 0.3s; }
-.slide.active .stat-box:nth-child(3) { animation: fadeInUp 0.5s ease both 0.4s; }
-.slide.active .stat-box:nth-child(4) { animation: fadeInUp 0.5s ease both 0.5s; }
+/* Cascade Animators */
+.slide.active .adaptive-card:nth-child(1) { animation: fadeInUp 0.5s ease both 0.25s; }
+.slide.active .adaptive-card:nth-child(2) { animation: fadeInUp 0.5s ease both 0.35s; }
+.slide.active .adaptive-card:nth-child(3) { animation: fadeInUp 0.5s ease both 0.45s; }
 
-/* Role tags stagger */
-.slide.active .role-tag {
-  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-.slide.active .role-tag:nth-child(1) { animation-delay: 0.2s; }
-.slide.active .role-tag:nth-child(2) { animation-delay: 0.25s; }
-.slide.active .role-tag:nth-child(3) { animation-delay: 0.3s; }
-.slide.active .role-tag:nth-child(4) { animation-delay: 0.35s; }
-.slide.active .role-tag:nth-child(5) { animation-delay: 0.4s; }
-.slide.active .role-tag:nth-child(6) { animation-delay: 0.45s; }
-.slide.active .role-tag:nth-child(7) { animation-delay: 0.5s; }
-.slide.active .role-tag:nth-child(8) { animation-delay: 0.55s; }
-/* Roadmap phases stagger */
+.slide.active .language-box:nth-child(1) { animation: fadeInUp 0.5s ease both 0.25s; }
+.slide.active .language-box:nth-child(2) { animation: fadeInUp 0.5s ease both 0.4s; }
+
 .slide.active .roadmap-phase:nth-child(1) { animation: fadeInUp 0.5s ease both 0.2s; }
 .slide.active .roadmap-phase:nth-child(2) { animation: fadeInUp 0.5s ease both 0.35s; }
 .slide.active .roadmap-phase:nth-child(3) { animation: fadeInUp 0.5s ease both 0.5s; }
 
-/* Table rows stagger */
-.slide.active .comparison-table tbody tr:nth-child(1) { animation: fadeInUp 0.4s ease both 0.2s; }
-.slide.active .comparison-table tbody tr:nth-child(2) { animation: fadeInUp 0.4s ease both 0.28s; }
-.slide.active .comparison-table tbody tr:nth-child(3) { animation: fadeInUp 0.4s ease both 0.36s; }
-.slide.active .comparison-table tbody tr:nth-child(4) { animation: fadeInUp 0.4s ease both 0.44s; }
-.slide.active .comparison-table tbody tr:nth-child(5) { animation: fadeInUp 0.4s ease both 0.52s; }
-
-/* ---------- Responsive ---------- */
+/* ============================================================
+   Responsive Breakpoints
+   ============================================================ */
 @media (max-width: 900px) {
-  h1 {
-    font-size: 2.2rem;
+  html, body {
+    overflow-y: auto;
   }
-  h2 {
-    font-size: 1.15rem;
+  .slide {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 5rem;
   }
-  .hook-text {
-    font-size: 1.5rem;
+  .slide.active {
+    display: flex;
+    flex-direction: column;
   }
   .content {
-    padding: 2.5rem 1.5rem;
+    padding: 3rem 1.5rem;
+    height: auto;
+    justify-content: flex-start;
   }
-  .stat-grid {
-    grid-template-columns: 1fr;
-  }
-  .slide3-columns {
+  h1 { font-size: 2.15rem; }
+  h2 { font-size: 1.15rem; }
+
+  /* Slide 2: Burning Platform Mobile */
+  .burning-container {
     flex-direction: column;
+    gap: 2rem;
   }
-  .my-role-box {
+  .burning-text {
     flex: none;
     width: 100%;
   }
-  .graph-wrapper {
-    flex-direction: column;
-  }
-  .graph-insight {
-    flex: none;
+  .graph-container {
     width: 100%;
+    padding: 1.25rem 1.25rem 1rem;
   }
-  .roadmap {
-    flex-direction: column;
+  .graph-area {
+    height: 180px;
   }
-  .demo-video-wrapper {
-    height: 40vh;
-    width: auto;
-    aspect-ratio: 564 / 720;
-  }
-  .demo-video {
-    width: 100%;
-    height: 100%;
-  }
-  .comparison-table {
-    font-size: 0.9rem;
+  .graph-callout {
+    display: none; /* Hide interactive tooltip on small viewports */
   }
 
-  /* Looker GCP Architecture Slide Responsive */
+  /* Slide 3: Adaptive OS Mobile */
+  .adaptive-features {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .adaptive-card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  /* Slide 4: Common Language Mobile */
+  .language-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .language-box {
+    padding: 2rem 1.75rem;
+  }
+
+  /* Slide 5: Architecture Mobile */
   .arch-pipeline {
     flex-direction: column;
     gap: 0.8rem;
@@ -1169,24 +1323,12 @@ h2 {
     min-height: unset;
     padding: 1.25rem 1rem;
   }
-  .arch-card h4 {
-    margin-bottom: 0.75rem;
-  }
-  .arch-card__sub {
-    margin-bottom: 0.75rem;
-  }
-  .arch-list {
-    margin: 0;
-  }
-  .medallion-stack {
-    margin: 0;
-  }
-  .metric-tags {
-    margin: 0;
-  }
-  .consumer-blocks {
-    margin: 0;
-  }
+  .arch-card h4 { margin-bottom: 0.75rem; }
+  .arch-card__sub { margin-bottom: 0.75rem; }
+  .arch-list { margin: 0; }
+  .medallion-stack { margin: 0; }
+  .metric-tags { margin: 0; }
+  .consumer-blocks { margin: 0; }
   .arch-connector {
     transform: rotate(90deg);
     margin: 0.25rem auto;
@@ -1194,51 +1336,74 @@ h2 {
     height: 20px;
   }
   @keyframes fadeInUpMobileConnector {
-    from {
-      opacity: 0;
-      transform: rotate(90deg) translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: rotate(90deg) translateY(0);
-    }
+    from { opacity: 0; transform: rotate(90deg) translateY(20px); }
+    to { opacity: 1; transform: rotate(90deg) translateY(0); }
   }
   .slide.active .arch-connector {
     animation: fadeInUpMobileConnector 0.6s cubic-bezier(0.16, 1, 0.3, 1) both !important;
   }
   @keyframes flowPulseMobile {
-    0% {
-      transform: translateX(0);
-      opacity: 0.4;
-    }
-    50% {
-      transform: translateX(5px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 0.4;
-    }
+    0% { transform: translateY(0); opacity: 0.4; }
+    50% { transform: translateY(5px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.4; }
   }
   .slide.active .arch-connector svg {
     animation: flowPulseMobile 2s infinite ease-in-out;
   }
+
+  /* Slide 6: Video Mobile */
+  .demo-video-wrapper {
+    height: 45vh;
+  }
+
+  /* Slide 7: Discovery Mobile */
+  .discovery-box {
+    padding: 1.75rem;
+  }
+
+  /* Slide 8: Scenario Setup Mobile */
+  .potential-quote {
+    padding: 1.5rem;
+    font-size: 1.15rem;
+  }
+
+  /* Slide 9: Scenario Payoff Mobile */
+  .agent-card {
+    padding: 1.5rem;
+  }
+  .agent-details {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Slide 10: Roadmap Mobile */
+  .roadmap {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .roadmap-phase {
+    padding: 1.5rem;
+  }
+
+  /* Slide 11: Thank You Mobile */
+  .callout-speed {
+    font-size: 2.25rem;
+  }
+  .slide-footer {
+    position: relative;
+    bottom: unset;
+    margin-top: 3rem;
+    gap: 2rem;
+  }
+  .slide-footer .logo {
+    height: 24px !important;
+  }
 }
 
 @media (max-width: 600px) {
-  h1 {
-    font-size: 1.6rem;
-  }
-  h2 {
-    font-size: 0.95rem;
-  }
-  .hook-text {
-    font-size: 1.2rem;
-  }
-  .slide-footer .logo {
-    height: 26px;
-  }
-  .stat-box__title {
-    font-size: 1.2rem;
-  }
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1rem; }
+  .burning-lead { font-size: 1.05rem; }
+  .thank-you-box h2 { font-size: 1.35rem; }
+  .callout-speed { font-size: 1.85rem; }
 }

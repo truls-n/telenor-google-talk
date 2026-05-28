@@ -11,7 +11,7 @@
     <!-- Google Fonts — Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -35,105 +35,59 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 2 — Cold Open ===================== -->
-        <section id="slide-2" class="slide slide--image"
-            style="background-image: url(./images/bg-digital-analyst.png);">
-            <div class="overlay"></div>
+        <!-- ===================== Slide 2 — The Burning Platform ===================== -->
+        <section id="slide-2" class="slide">
             <div class="content content--center">
-                <p class="hook-text">We recently got a new colleague. In <em>all</em> our teams... He's an agent. And he
-                    lets us chat with our data. More on him later.<span class="blinking-cursor">|</span></p>
-            </div>
-            <footer class="slide-footer">
-                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
-                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
-            </footer>
-        </section>
-
-        <!-- ===================== Slide 3 — Who We Are (Two-Column) ===================== -->
-        <section id="slide-3" class="slide slide--image"
-            style="background-image: url(./images/bg-corporate-stats.png);">
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>A Scale-Up <span class="accent">Inside a Giant</span></h1>
-                <div class="slide3-columns">
-                    <div class="stat-grid">
-                        <div class="stat-box">
-                            <div class="stat-box__label">Market Leader</div>
-                            <div class="stat-box__title">Leading B2B Telco</div>
-                            <div class="stat-box__subtitle">~60% market share in Norway</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-box__label">Our Org</div>
-                            <div class="stat-box__title">225 People</div>
-                            <div class="stat-box__subtitle">Powering B2B Mobile</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-box__label">Economic Scale</div>
-                            <div class="stat-box__title">Top 45 OSE Company</div>
-                            <div class="stat-box__subtitle">Our business area alone, by revenue</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="stat-box__label">Data Volume</div>
-                            <div class="stat-box__title">Massive Data Warehouse</div>
-                            <div class="stat-box__subtitle">One of Norway's largest, now on GCP</div>
-                        </div>
+                <h1>Our Existential Challenge</h1>
+                <div class="burning-container">
+                    <div class="burning-text">
+                        <p class="burning-lead">Today, we face a critical resource bottleneck: <strong>&gt;80% of our capacity</strong> is locked in running and maintaining legacy systems, leaving less than 20% for future innovation.</p>
+                        <p class="burning-sub">To escape this gravitational pull, we must radically automate the "Run" of our business to fund and fuel our "Change".</p>
                     </div>
-                    <div class="my-role-box">
-                        <h3>My Role</h3>
-                        <p>Leading 7/22 teams championing:</p>
-                        <div class="role-tags">
-                            <span class="role-tag">eCommerce</span>
-                            <span class="role-tag">Mobile Hardware</span>
-                            <span class="role-tag">Self Service</span>
-                            <span class="role-tag">Integration Products</span>
-                            <span class="role-tag">CRM</span>
-                            <span class="role-tag">Martech</span>
-                            <span class="role-tag">Data &amp; AI Foundation</span>
-                            <span class="role-tag">Analytics</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="slide-footer">
-                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
-                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
-            </footer>
-        </section>
-
-        <!-- ===================== Slide 4 — The Dilemma (Graph + Insight) ===================== -->
-        <section id="slide-4" class="slide slide--image" style="background-image: url(./images/bg-subtle-texture.png);">
-            <div class="overlay"></div>
-            <div class="content content--center">
-                <h1>Our Core Dilemma: <span class="accent">The Gravitational Pull of Legacy</span></h1>
-                <div class="graph-wrapper">
                     <div class="graph-container">
                         <div class="graph-area">
-                            <span class="graph-label graph-label--y">Effort &amp; Resources</span>
+                            <span class="graph-label graph-label--y">Effort &amp; Cost</span>
                             <span class="graph-label graph-label--x">Time →</span>
-                            <div class="graph-line">
+                            <div class="graph-svg-wrapper">
                                 <svg viewBox="0 0 800 260" preserveAspectRatio="none">
-                                    <polyline class="line-running"
-                                        points="0,40 100,38 200,42 300,36 400,40 500,35 600,38 700,36 800,40" />
-                                    <polyline class="line-building"
-                                        points="0,220 100,215 200,222 300,210 400,218 500,225 600,212 700,220 800,216" />
+                                    <!-- Horizontal Grid Lines -->
+                                    <line x1="0" y1="50" x2="800" y2="50" stroke="rgba(33, 37, 41, 0.08)" stroke-width="1" stroke-dasharray="4" />
+                                    <line x1="0" y1="130" x2="800" y2="130" stroke="rgba(33, 37, 41, 0.08)" stroke-width="1" stroke-dasharray="4" />
+                                    <line x1="0" y1="210" x2="800" y2="210" stroke="rgba(33, 37, 41, 0.08)" stroke-width="1" stroke-dasharray="4" />
+                                    
+                                    <!-- Cost of Legacy (Thick Red Line, starts high, remains flat/high, slightly slopes) -->
+                                    <path class="line-legacy" d="M 0,55 C 200,60 400,65 550,75" stroke="#e63946" stroke-width="4.5" fill="none" stroke-linecap="round" />
+                                    <path class="line-legacy-projected" d="M 550,75 C 650,83 730,90 800,95" stroke="#e63946" stroke-width="4.5" stroke-dasharray="6,6" fill="none" stroke-linecap="round" />
+                                    
+                                    <!-- Investment in Future (Thin Blue Line, starts low, climbs slowly, then accelerates) -->
+                                    <path class="line-future" d="M 0,225 C 200,215 400,185 550,135" stroke="#0066ff" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                                    <path class="line-future-projected" d="M 550,135 C 650,95 720,55 800,20" stroke="#0066ff" stroke-width="3" stroke-dasharray="6,6" fill="none" stroke-linecap="round" />
+                                    
+                                    <!-- Crossing point glow and marker at (620, 95) -->
+                                    <circle cx="620" cy="95" r="10" class="graph-point-glow" />
+                                    <circle cx="620" cy="95" r="5.5" class="graph-point" />
                                 </svg>
+                                <!-- Interactive callout on crossover point -->
+                                <div class="graph-callout">
+                                    <div class="callout-title">Escape Velocity</div>
+                                    <div class="callout-desc">Investment in Future crosses Cost of Legacy</div>
+                                </div>
                             </div>
                         </div>
                         <div class="graph-legend">
                             <div class="legend-item">
-                                <span class="legend-dot legend-dot--blue"></span>
-                                Running the Business
+                                <span class="legend-line legend-line--red"></span>
+                                Cost of Legacy (Run)
                             </div>
                             <div class="legend-item">
-                                <span class="legend-dot legend-dot--red"></span>
-                                Building the Future
+                                <span class="legend-line legend-line--blue"></span>
+                                Investment in Future (Change)
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-line legend-line--dotted"></span>
+                                Adaptive OS Projection
                             </div>
                         </div>
-                    </div>
-                    <div class="graph-insight">
-                        <h3>The Challenge</h3>
-                        <p>Today, <strong>&gt;80%</strong> of our resources are tied to 'Run', limiting our capacity for
-                            'Change' and 'Disrupt'.</p>
                     </div>
                 </div>
             </div>
@@ -143,14 +97,60 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 5 — The "Why" ===================== -->
-        <section id="slide-5" class="slide slide--image"
+        <!-- ===================== Slide 3 — Adaptive OS ===================== -->
+        <section id="slide-3" class="slide slide--image"
+            style="background-image: url(./images/bg-adaptive-os.png);">
+            <div class="overlay"></div>
+            <div class="content">
+                <h1>Our Strategic Answer: Building an <span class="accent">"Adaptive OS"</span> for the Business</h1>
+                <div class="adaptive-container">
+                    <h2>We are shifting from rigid, siloed software structures to an adaptive, self-learning operating system.</h2>
+                    <div class="adaptive-features">
+                        <div class="adaptive-card">
+                            <div class="card-num">01</div>
+                            <h3>Self-Learning Core</h3>
+                            <p>An operating system that digests our real-time business context and documents, growing smarter with every single user transaction.</p>
+                        </div>
+                        <div class="adaptive-card">
+                            <div class="card-num">02</div>
+                            <h3>Cognitive Automation</h3>
+                            <p>Shifting from automating mechanical tasks to automating deep cognitive workflows, analysis, and strategic scenarios.</p>
+                        </div>
+                        <div class="adaptive-card">
+                            <div class="card-num">03</div>
+                            <h3>Human-Agent Synergy</h3>
+                            <p>A collaborative working ecosystem where human talent delegates data parsing to agents, focusing purely on high-leverage strategy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 4 — Common Language ===================== -->
+        <section id="slide-4" class="slide slide--image"
             style="background-image: url(./images/bg-unstructured-data.png);">
             <div class="overlay"></div>
             <div class="content">
-                <h1>The Real Problem: <span class="accent">Our Knowledge is Trapped</span></h1>
-                <h2>To build digital colleagues, we first need to structure our vast, unreadable data from PowerPoints,
-                    emails, and conversations.</h2>
+                <h1>The Core Principle: A <span class="accent">Common Language</span> for Humans &amp; Agents</h1>
+                <div class="common-language-container">
+                    <h2>Autonomous agents cannot execute on messy, unmapped data. They require highly structured context.</h2>
+                    <div class="language-grid">
+                        <div class="language-box language-box--problem">
+                            <div class="box-badge">The Problem</div>
+                            <h3>Trapped Knowledge</h3>
+                            <p>Vast organization intelligence is currently locked away inside static slide decks, hidden email threads, and unlogged daily discussions.</p>
+                        </div>
+                        <div class="language-box language-box--solution">
+                            <div class="box-badge">The Core Principle</div>
+                            <h3>Structured Semantic Layer</h3>
+                            <p>By defining everything as plain text code (Markdown &amp; LookML), we build a single, shared source of truth that humans and AI agents understand equally.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <footer class="slide-footer">
                 <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
@@ -158,76 +158,12 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 6 — The "How" ===================== -->
-        <section id="slide-6" class="slide slide--image"
-            style="background-image: url(./images/bg-developer-workflow.png);">
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Our Method: <span class="accent">Adopt the Developer's Toolkit</span></h1>
-                <h2>We mandate that everyone works with plain text (Markdown), version control (Git), and peer review
-                    (Pull Requests). This makes our knowledge structured by default.</h2>
-            </div>
-            <footer class="slide-footer">
-                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
-                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
-            </footer>
-        </section>
-
-        <!-- ===================== Slide 7 — Everything as Code (Table) ===================== -->
-        <section id="slide-7" class="slide slide--image"
-            style="background-image: url(./images/bg-engine-room.png);">
+        <!-- ===================== Slide 5 — The Analytics App (Architecture) ===================== -->
+        <section id="slide-5" class="slide slide--image" style="background-image: url(./images/bg-architecture-blocks.png);">
             <div class="overlay"></div>
             <div class="content content--center">
-                <h1>The Engine Room: <span class="accent">Treating Everything as Code</span></h1>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Dimension</th>
-                            <th>Old Way</th>
-                            <th>New Way</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Documents</td>
-                            <td class="old-way">PowerPoint &amp; Word</td>
-                            <td class="new-way">Markdown in Git</td>
-                        </tr>
-                        <tr>
-                            <td>Collaboration</td>
-                            <td class="old-way">Email threads</td>
-                            <td class="new-way">Pull Requests &amp; Reviews</td>
-                        </tr>
-                        <tr>
-                            <td>Data Pipelines</td>
-                            <td class="old-way">Manual ETL scripts</td>
-                            <td class="new-way">dbt models in version control</td>
-                        </tr>
-                        <tr>
-                            <td>Dashboards</td>
-                            <td class="old-way">Static exports</td>
-                            <td class="new-way">LookML as Code</td>
-                        </tr>
-                        <tr>
-                            <td>Infrastructure</td>
-                            <td class="old-way">Manual Requests &amp; Waiting</td>
-                            <td class="new-way">Automated Self Service</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <footer class="slide-footer">
-                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
-                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
-            </footer>
-        </section>
-
-        <!-- ===================== Slide 7B — Data Architecture ===================== -->
-        <section id="slide-data-architecture" class="slide slide--image" style="background-image: url(./images/bg-architecture-blocks.png);">
-            <div class="overlay"></div>
-            <div class="content content--center">
-                <h1>Looker GCP Architecture: <span class="accent">Our Semantic Engine</span></h1>
-                <h2>From source to a single version of truth and intelligent conversations with your business data.</h2>
+                <h1>Our First Proof in Production: <span class="accent">The Analytics App</span></h1>
+                <h2>Translating our technical architecture into a high-performance horizontal data pipeline.</h2>
                 
                 <div class="arch-pipeline">
                     <!-- Step 1: Sources -->
@@ -237,7 +173,7 @@
                         <ul class="arch-list">
                             <li><span>BigQuery</span></li>
                             <li><span>Salesforce</span></li>
-                            <li><span>Other Sources</span></li>
+                            <li><span>Operational Systems</span></li>
                         </ul>
                     </div>
 
@@ -245,14 +181,14 @@
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </div>
 
-                    <!-- Step 2: Medallion Warehouse -->
+                    <!-- Step 2: Storage (dbt) -->
                     <div class="arch-card arch-card--medallion">
                         <div class="arch-card__badge">Step 2</div>
                         <h4>Storage (dbt)</h4>
                         <div class="medallion-stack">
                             <div class="medallion-layer gold" title="Structured data products prepared for Looker">Gold: Data Products</div>
-                            <div class="medallion-layer silver" title="Cleaned and harmonized intermediate layer">Silver: Intermediate Layer</div>
-                            <div class="medallion-layer bronze" title="Raw data directly from source systems">Bronze: Raw Data</div>
+                            <div class="medallion-layer silver" title="Cleaned and harmonized intermediate layer">Silver: Cleaned Data</div>
+                            <div class="medallion-layer bronze" title="Raw data directly from source systems">Bronze: Raw Ingestion</div>
                         </div>
                     </div>
 
@@ -300,25 +236,12 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 8 — AI Analyst Architecture ===================== -->
-        <section id="slide-8" class="slide slide--image"
-            style="background-image: url(./images/new-06-architecture.png);">
-            <div class="overlay"></div>
+        <!-- ===================== Slide 6 — AI Analyst (Video) ===================== -->
+        <section id="slide-6" class="slide">
             <div class="content content--center">
-                <h1>Meet the <span class="accent">"AI Analyst"</span>: Our First Digital Colleague</h1>
-            </div>
-            <footer class="slide-footer">
-                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
-                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
-            </footer>
-        </section>
-
-        <!-- ===================== Slide 9 — Demo ===================== -->
-        <section id="slide-9" class="slide">
-            <div class="content content--center">
-                <h1>This is not a dashboard. <span class="accent">This is a conversation.</span></h1>
+                <h1>The Result: <span class="accent">The "AI Analyst"</span> in Action</h1>
                 <div class="demo-video-wrapper" id="demoVideoWrapper">
-                    <video class="demo-video" id="demoVideo" autoplay muted playsinline src="./media/looker-agent.mp4"></video>
+                    <video class="demo-video" id="demoVideo" autoplay muted playsinline src="./media/looker-agent-cropped.mp4"></video>
                 </div>
             </div>
             <footer class="slide-footer">
@@ -327,13 +250,18 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 10 — Culture / Aha Moment (Image) ===================== -->
-        <section id="slide-10" class="slide slide--image" style="background-image: url(./images/bg-new-culture.png);">
+        <!-- ===================== Slide 7 — Unexpected Discovery ===================== -->
+        <section id="slide-7" class="slide slide--image" style="background-image: url(./images/bg-domino-effect.png);">
             <div class="overlay"></div>
             <div class="content">
-                <h1>The Digital Analyst <span class="accent">Created an Appetite for More</span></h1>
-                <h2>The result? A cultural shift. The 'AI Analyst' proved the value of this new way of work, replacing
-                    skepticism with genuine excitement for 'what's next'.</h2>
+                <h1>The Unexpected Discovery: <span class="accent">Creating Demand for Change</span></h1>
+                <div class="discovery-container">
+                    <h2>We realized that change management doesn't have to be forced from the top down.</h2>
+                    <div class="discovery-box">
+                        <div class="discovery-badge">The Pull Effect 🐭</div>
+                        <p class="discovery-lead">By deploying a single, highly effective digital colleague, we bypassed standard organizational friction. Instead of pushing change, we triggered a <strong>powerful domino pull-effect</strong>: seeing actual value created in seconds made teams instantly demand agentic support for themselves.</p>
+                    </div>
+                </div>
             </div>
             <footer class="slide-footer">
                 <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
@@ -341,30 +269,89 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 11 — Roadmap ===================== -->
-        <section id="slide-11" class="slide">
+        <!-- ===================== Slide 8 — The True Potential (Scenario Intro) ===================== -->
+        <section id="slide-8" class="slide">
             <div class="content content--center">
-                <h1>This is <span class="accent">Just the Beginning</span></h1>
+                <h1>The True Potential: <span class="accent">From Faster Answers to Impossible Insights</span></h1>
+                <div class="potential-container">
+                    <p class="potential-lead">The real power of an Adaptive OS is not just querying data 10 times faster.</p>
+                    <p class="potential-sub">It is the shift from retrospective static analysis ("What happened last month?") to solving highly complex, multi-variable business scenarios that previously took weeks of human orchestration.</p>
+                    <div class="potential-quote">
+                        "What if our leadership could instantly cross-reference technical constraints, commercial capacity, and public policy variables to answer critical, time-sensitive questions?"
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 9 — Strategic Co-pilot Scenario ===================== -->
+        <section id="slide-9" class="slide">
+            <div class="content content--center">
+                <h2>"Bør vi bygge ut 5G-dekning på Svalbard nå, eller bør vi prioritere fiber-backhaul på fastlandet?"</h2>
+                <div class="scenario-container">
+                    <div class="agent-card">
+                        <div class="agent-card__header">
+                            <span class="pulse-dot"></span>
+                            <span class="agent-card__avatar">🤖</span>
+                            <div class="agent-card__title">
+                                <h3>Strategic Co-pilot</h3>
+                                <span class="agent-card__subtitle">Adaptive OS Agent Node</span>
+                            </div>
+                        </div>
+                        <blockquote class="agent-quote">
+                            <p class="agent-quote__summary"><strong>Recommendation: Prioritize mainland fiber backhaul (allocate 70% budget), while addressing Svalbard 5G through a public-private partnership structure.</strong></p>
+                            
+                            <div class="agent-details">
+                                <div class="agent-detail-item">
+                                    <div class="item-num">1</div>
+                                    <div class="item-content">
+                                        <h4>Mainland Fiber Backhaul (Commercial ROI: 14.2%)</h4>
+                                        <p>Mainland capacity upgrades relieve active B2B cellular congestion across 4 major transport nodes, unlocking immediate enterprise data monetization.</p>
+                                    </div>
+                                </div>
+                                <div class="agent-detail-item">
+                                    <div class="item-num">2</div>
+                                    <div class="item-content">
+                                        <h4>Svalbard 5G Expansion (Strategic &amp; Sovereignty)</h4>
+                                        <p>Standalone commercial return is negative due to low population density. However, geopolitical presence, research telemetry, and emergency service requirements justify co-funding from state development resources.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <footer class="slide-footer">
+                <img src="./logos/telenor-logo.png" alt="Telenor Logo" class="logo">
+                <img src="./logos/gcp-logo.png" alt="Google Cloud Logo" class="logo">
+            </footer>
+        </section>
+
+        <!-- ===================== Slide 10 — Roadmap ===================== -->
+        <section id="slide-10" class="slide">
+            <div class="content content--center">
+                <h1>Scaling the OS: <span class="accent">The Roadmap</span></h1>
                 <h2 class="tagline">"It doesn't help to be twice as good in a world that becomes 10x faster."</h2>
                 <div class="roadmap">
                     <div class="roadmap-phase roadmap-phase--active">
                         <span class="phase-badge">Phase 1</span>
                         <div class="phase-title">AI Analyst</div>
-                        <div class="phase-desc">Conversational analytics across our full data warehouse. Ask questions,
-                            get answers.</div>
-                        <div class="phase-status phase-status--live">&#9679; Live</div>
+                        <div class="phase-desc">Conversational analytics across our full data warehouse. Ask questions, get structured insights in seconds.</div>
+                        <div class="phase-status phase-status--live">&#9679; Live in Production</div>
                     </div>
                     <div class="roadmap-phase">
                         <span class="phase-badge">Phase 2</span>
                         <div class="phase-title">Sales Ops Assistant</div>
-                        <div class="phase-desc">Proactive insights and deal recommendations delivered directly to sales
-                            teams.</div>
-                        <div class="phase-status phase-status--next">&#9675; Next</div>
+                        <div class="phase-desc">Proactive deal matching, anomaly detection, and automated pricing contract recommendations directly in CRM.</div>
+                        <div class="phase-status phase-status--next">&#9675; In Development</div>
                     </div>
                     <div class="roadmap-phase">
                         <span class="phase-badge">Phase 3</span>
-                        <h3 class="phase-title">The Agentic Operating Model</h3>
-                        <p class="phase-desc">A future where hybrid teams of humans &amp; AI agents are the new standard, freeing our talent to focus on strategy and creativity.</p>
+                        <div class="phase-title">Agentic Operating Model</div>
+                        <div class="phase-desc">A fully optimized, hybrid working ecosystem of humans and autonomous agents working seamlessly in parallel.</div>
                         <div class="phase-status phase-status--future"><span class="status">Our North Star ⭐</span></div>
                     </div>
                 </div>
@@ -375,13 +362,17 @@
             </footer>
         </section>
 
-        <!-- ===================== Slide 12 — Thank You ===================== -->
-        <section id="slide-12" class="slide">
+        <!-- ===================== Slide 11 — Thank You ===================== -->
+        <section id="slide-11" class="slide">
             <div class="content content--center">
                 <h1>Thank You</h1>
+                <div class="thank-you-box">
+                    <h2>We now have a proven, adaptive operating system for the future.</h2>
+                    <h1 class="accent callout-speed">Now, it's all about speed.</h1>
+                </div>
                 <div class="contact-info">
-                    <p>Truls Erik Nielsen</p>
-                    <p>Head of Admin Products, eCommerce &amp; Shared Services</p>
+                    <p class="contact-name">Truls Erik Nielsen</p>
+                    <p class="contact-title">Head of Admin Products, eCommerce &amp; Shared Services</p>
                 </div>
             </div>
             <footer class="slide-footer">
