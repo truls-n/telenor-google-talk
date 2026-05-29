@@ -19,7 +19,9 @@ The reality is that over 80% of our collective energy and resources are locked i
 
 ## Slide 3: Our Strategic Answer: Building an "Adaptive OS"
 
-"Our way off this platform is to design and build a new operativsystem for the business. An Adaptive OS. A system designed for continuous learning and evolution, with a common language for humans and AI agents at its very core."
+"Our way off this platform is to design and build a new operativsystem for the business. An Adaptive OS. A system designed for continuous learning and evolution, with a common language for humans and AI agents at its very core.
+
+Business users give instructions in their own language. Agents execute across backends. Humans focus on decisions, relationships, and creativity."
 
 ---
 
@@ -55,6 +57,8 @@ This isn't a technical goal; it's a communication principle. In practice, it mea
 
 Natural language queries directly against your full data warehouse. Shared scripts and models that work the same for everyone, everywhere. Quality standards automatically enforced across every document and process. And people who have never touched a terminal learning developer thinking — not through a course, but through daily work.
 
+We're already measuring it: 75 FTE-equivalents of work absorbed by AI agents. 60x productivity on key workflows. Not someday — now.
+
 This is what the platform unlocks. Not one tool. A new operating model."
 
 ---
@@ -65,19 +69,19 @@ This is what the platform unlocks. Not one tool. A new operating model."
 
 ---
 
-## Slide 10: Scenario: The Strategic Co-pilot
+## Slide 10: Scenario: This Is How It Works
 
-"A senior leader asks a simple but critical question: 'Should we expand 5G coverage on Svalbard now, or prioritize fiber backhaul on the mainland?'
+"Let me show you a real example — something that happened in our own team.
 
-The agent responds: 'My recommendation: prioritize mainland fiber backhaul — allocate 70% of the budget — while addressing Svalbard 5G through a public-private partnership structure.
+Someone asks the agent: 'Make me a board presentation on the Security roadmap.'
 
-Here's why: Mainland upgrades relieve active B2B congestion across four major transport nodes and unlock immediate enterprise data monetization — commercial ROI of 14.2%.
+The agent gets to work. It reads four source documents. It detects that a key product metric is outdated — and corrects it. Then it does something no human analyst would have thought to do: it identifies a brand-new opportunity that wasn't in any of the source documents — and adds it to the roadmap.
 
-Svalbard is a different kind of case. Standalone commercial return is negative given the population density. But geopolitical presence, research telemetry, and emergency service requirements are real strategic assets — they just need to be funded through state development resources, not our commercial budget. The partnership route gets you both.'
+Fifteen minutes later, the presentation is built, the numbers are validated, the update is committed to Git, and all stakeholders are notified.
 
 *(pause)*
 
-No single team could have made that analysis — it crosses commercial data, geopolitical context, and infrastructure constraints simultaneously. That is the true power of an Adaptive OS."
+No single person could have done that. Not in 15 minutes. Not without errors. Not with that level of cross-document awareness. No one even asked it to find the new opportunity — it just did. This is Content-as-Code in action. This is what the Adaptive OS makes possible."
 
 ---
 
@@ -91,7 +95,9 @@ No single team could have made that analysis — it crosses commercial data, geo
 
 "We've only just begun to explore the true potential of this new model.
 
-But for the first time, we don't just have a vision for the future – we have a proven, adaptive operating system to build it with.
+A strategy is not a plan to be approved — it is a machine to be started. Ours is running.
+
+For the first time, we don't just have a vision for the future – we have a proven, adaptive operating system to build it with.
 
 Now, it's all about speed.
 
